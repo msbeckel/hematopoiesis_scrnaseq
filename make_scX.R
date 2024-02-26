@@ -7,13 +7,15 @@
 # Library ----
 library(scX)
 # Loading SCE object ----
-sce  <- readRDS("/home/data/sce.rds")
+sce <- readRDS("/home/data/sce.rds")
 cseo <- createSCEobject(
     xx = sce,
-    metadataVars = c("library_id", "seq_run_id",
-                     "PBA_Potential", "PBA_Prob_E", "PBA_Prob_GN", 
-                     "PBA_Prob_Ly", "PBA_Prob_D", "PBA_Prob_Meg", 
-                     "PBA_Prob_M"    "PBA_Prob_Ba"),
+    metadataVars = c(
+        "library_id", "seq_run_id",
+        "PBA_Potential", "PBA_Prob_E", "PBA_Prob_GN",
+        "PBA_Prob_Ly", "PBA_Prob_D", "PBA_Prob_Meg",
+        "PBA_Prob_M", "PBA_Prob_Ba"
+    ),
     descriptionText = "Tusi 2018 Haematopoiesis dataset"
 )
 

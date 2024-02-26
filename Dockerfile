@@ -5,7 +5,7 @@ FROM msbeckel/scx:0.2.0
 RUN mkdir /home/shiny-app
 
 # Copy the Shiny app code
-COPY example.r /home/shiny-app/make_scX.r
+COPY make_scX.R /home/shiny-app/make_scX.R
 
 #
 RUN chmod -R 755 /home/shiny-app/
@@ -15,4 +15,4 @@ RUN mkdir /data && chown shiny:shiny /data
 EXPOSE 9191
 
 # Run the R Shiny app
-CMD Rscript /home/shiny-app/make_scX.r
+CMD Rscript /home/shiny-app/make_scX.R
