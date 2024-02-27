@@ -19,4 +19,4 @@ cseo <- createSCEobject(
     descriptionText = "Tusi 2018 Haematopoiesis dataset"
 )
 
-launch_scX(cseo, point.size = 50, port = 9191, host = "0.0.0.0", launch.browser = F)
+launch_scX(cseo, point.size = 50, port = 9192, host = "0.0.0.0", launch.browser = F)

@@ -21,10 +21,17 @@ sce <- SingleCellExperiment(assays = list(counts = t(rawdata)), colData = metada
 
 # cells and genes names
 rownames(sce) <- genes[, 1]
-colnames(sce) <- metadata[, "barcode"]
+colnames(sce) <- metadata[, "cell_id"]
 
-# Filter
+# Filter cells
 sce <- sce[, as.logical(colData(sce)$pass_filter)]
+
+#Add coordinated from KNN
+coord           <- read.csv('data/coordinates.txt',header=FALSE, row.names=colnames(sce))
+reducedDim(sce, 'KNN')<-coord[, c(2, 3)]
+
+#Filter basal_bm1
+sce <- sce[,sce$library_id != "basal_bm1"]
 
 # Export SCE object
 saveRDS(sce, file = "./data/sce.rds")

@@ -12,7 +12,7 @@ RUN chmod -R 755 /home/shiny-app/
 RUN mkdir /data && chown shiny:shiny /data
 
 # Expose the application portS
-EXPOSE 9191
+EXPOSE 9192
 
 # Run the R Shiny app
 CMD Rscript /home/shiny-app/make_scX.R
