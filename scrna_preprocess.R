@@ -18,6 +18,12 @@ genes <- read.table("./data/basal_bone_marrow/genes.txt")
 
 # Make sce object and filter cells
 sce <- SingleCellExperiment(assays = list(counts = t(rawdata)), colData = metadata)
+
+# cells and genes names
+rownames(sce) <- genes[, 1]
+colnames(sce) <- metadata[, "barcode"]
+
+# Filter
 sce <- sce[, as.logical(colData(sce)$pass_filter)]
 
 # Export SCE object

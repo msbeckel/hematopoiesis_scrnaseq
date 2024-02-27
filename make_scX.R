@@ -5,7 +5,7 @@
 # Last modification: 2024/02/26
 #############################################################################################
 # Library ----
-library(scX)
+suppressPackageStartupMessages(library(scX))
 # Loading SCE object ----
 sce <- readRDS("/home/data/sce.rds")
 cseo <- createSCEobject(
