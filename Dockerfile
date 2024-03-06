@@ -1,5 +1,5 @@
 # Base R Shiny image
-FROM msbeckel/scx:0.2.0
+FROM msbeckel/scx:0.3.0
 
 # Make a directory in the container
 RUN mkdir /home/shiny-app

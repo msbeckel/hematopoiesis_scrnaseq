@@ -8,6 +8,11 @@
 suppressPackageStartupMessages(library(scX))
 # Loading SCE object ----
 sce <- readRDS("/home/data/sce.rds")
+
+# Filter basal_bm1
+sce <- sce[, sce$library_id != "basal_bm1"]
+
+# Preprocess
 cseo <- createSCEobject(
     xx = sce,
     metadataVars = c(
