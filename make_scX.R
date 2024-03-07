@@ -15,6 +15,7 @@ sce <- sce[, sce$library_id != "basal_bm1"]
 # Preprocess
 cseo <- createSCEobject(
     xx = sce,
+    partitionVars = "louvain",
     metadataVars = c(
         "library_id", "seq_run_id",
         "PBA_Potential", "PBA_Prob_E", "PBA_Prob_GN",
